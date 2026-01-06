@@ -74,8 +74,8 @@ async function main() {
     await dbConnect();
     loadCommands();
     loadEvents();
-    buildAllRankCache();                  // build lần đầu
-    setInterval(buildAllRankCache, 30 * 60 * 1000); // 30 phút rebuild
+    buildAllRankCache();                  // first build
+    setInterval(buildAllRankCache, 30 * 60 * 1000); // rebuild after 30 mins
     setInterval(() => {
         notifyService(client);
     }, 60 * 1000);
